@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피파모바일 쿠폰코드</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            text-align: center; /* 모든 텍스트를 가운데 정렬 */
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #copy-status {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>피파모바일 쿠폰코드</h1>
+        <p id="code-text">4시4철4통팔달만4형통되세요</p>
+        <button id="copy-button">복사</button>
+        <p id="copy-status"></p>
+    </div>
+
+    <script>
+        document.getElementById('copy-button').addEventListener('click', function() {
+            const codeText = document.getElementById('code-text').innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                document.getElementById('copy-status').innerText = '복사되었습니다!';
+            }).catch(err => {
+                document.getElementById('copy-status').innerText = '복사에 실패했습니다.';
+            });
+        });
+    </script>
+</body>
+</html>
